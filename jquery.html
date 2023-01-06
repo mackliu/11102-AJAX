@@ -51,8 +51,11 @@
     $.get('https://kktix.com/events.json',function(response){
       console.log(response)
       let str=''
-     response.entry.forEach((item)=>{
-            str+=`<li>${item.author.name}</li>`;
+     response.entry.forEach((item,idx)=>{
+        if(idx<10){
+          str+=`<li>${item.author.name}</li>`;
+
+        }
             console.log(item.author.name)
         })
         console.log(str)
